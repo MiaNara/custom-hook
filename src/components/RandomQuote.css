@@ -1,6 +1,3 @@
-body {
-  background-color: #3f4346;
-}
 .card {
   position: absolute;
   top: 50%;
@@ -25,7 +22,7 @@ body {
   border-radius: 3px;
   display: flex;
 }
-.card > div {
+.card_inside {
   height: 100%;
   display: flex;
   flex-direction: column;

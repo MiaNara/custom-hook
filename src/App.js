@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import RandomQuote from './components/RandomQuote';
+import useFetch from './hook/useFetch';
+import Error from './components/Error';
+import Loading from './components/Loading';
 
 function App() {
+  const [data, loading, error] = useFetch('https://api.quotable.io/random');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {loading ? (
+        <Loading />
+      ) : !loading && error ? (
+        <Error error={error} />
+      ) : (
+        <RandomQuote data={data} />
+      )}
     </div>
   );
 }
