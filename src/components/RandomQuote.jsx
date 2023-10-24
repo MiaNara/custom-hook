@@ -1,5 +1,4 @@
 import React from "react";
-// import "./RandomQuote.css";
 export default function RandomQuote(data) {
   return (
     <div className="card">
